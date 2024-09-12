@@ -2,7 +2,7 @@
 import Button from '../Button';
 import { IGuitarProps } from './guitar.types';
 
-const Guitar = ({guitar, addToCart}: IGuitarProps) => {
+const Guitar = ({guitar, dispatch}: IGuitarProps) => {
 
   const { name, description, image, price} = guitar
 
@@ -15,7 +15,10 @@ const Guitar = ({guitar, addToCart}: IGuitarProps) => {
         <h3 className="text-black fs-4 fw-bold text-uppercase">{name}</h3>
         <p>{description}</p>
         <p className="fw-black text-primary fs-3">${price} </p>
-        <Button title={'Add to Cart'} handleClick={addToCart} item={guitar}  />
+        <Button
+         title={'Add to Cart'} 
+         dispatch={dispatch} 
+         item={guitar} />
     </div>
 </div>
   )

@@ -1,10 +1,12 @@
+import { Dispatch } from "react";
+import { CartActions } from "../../reducers/cartReducer.types";
+
 export interface IGuitar {
     id: number,
     name: string,
     image: string,
     description: string,
     price: number,
-    // quantity: number
   }
   
   export type CartItem = IGuitar & {
@@ -12,6 +14,7 @@ export interface IGuitar {
   }
 
   export type GuitarID = IGuitar['id']
+  
   // export type GuitarID = Pick<IGuitar, 'id'>
   // export interface CartItem extends IGuitar {
   //   quantity: number
@@ -21,5 +24,6 @@ export interface IGuitar {
 
   export interface IGuitarProps {
     guitar: IGuitar;
-    addToCart: (value: IGuitar) => void
+    dispatch: Dispatch<CartActions>
+    // addToCart: (value: IGuitar) => void
   }

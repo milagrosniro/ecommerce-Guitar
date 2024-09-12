@@ -1,11 +1,11 @@
 import { IButtonProps } from './button.types'
 
-const Button = ({title, handleClick, item}: IButtonProps) => {
+const Button = ({title, dispatch, item}: IButtonProps) => {
   return (
     <button 
             type="button"
             className="btn btn-dark w-100"
-            onClick={()=>handleClick(item)}
+            onClick={()=>dispatch({type:'addToCart', payload:{guitar:item}})}
         >{title}</button>
   )
 }

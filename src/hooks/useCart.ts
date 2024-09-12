@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { db } from "../db";
 import { CartItem, GuitarID, IGuitar } from "../components/Guitar/guitar.types";
 import { ICartState, IDataState } from "../types";
+import { maxItems, minItems } from "../constants";
 
 const useCart = () => {
   const initialCartState = () =>{
@@ -11,9 +12,6 @@ const useCart = () => {
 
   const [data, setData] = useState<IDataState>([]);
   const [cart, setCart] = useState<ICartState>(initialCartState());
-
-  const maxItems = 5;
-  const minItems = 1;
 
   useEffect(() => {
     setData(db);
@@ -65,6 +63,7 @@ const useCart = () => {
     }
 
   }
+  
   const isEmpty = useMemo(() => cart.length === 0, [cart]) 
   const cartTotal =useMemo(() => cart.reduce((total, item)=> total + (item.quantity * item.price),0), [cart])
 

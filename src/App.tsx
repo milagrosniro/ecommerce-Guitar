@@ -1,21 +1,31 @@
+import { useEffect, useMemo, useReducer } from "react";
 import Guitar from "./components/Guitar/Guitar";
 import Header from "./components/Header/Header";
-import useCart from "./hooks/useCart";
+// import useCart from "./hooks/useCart";
+import { cartReducer, initialState } from "./reducers/cartReducer";
 
 const App = () => {
 
-const {cart, removeFromCart, increaseQuantity, decreaseQuantity, cleanCart, data, cartTotal, isEmpty, addToCart} = useCart();
-  
+// const {removeFromCart, increaseQuantity, decreaseQuantity, cleanCart,  cartTotal,  addToCart} = useCart();
+
+const [state, dispatch] = useReducer(cartReducer, initialState);
+const {cart, data} = state;
+
+useEffect(() => {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}, [cart]);
+
   return (
     <>
       <Header
         cart={cart}
-        removeFromCart={removeFromCart}
-        increaseQuantity={increaseQuantity}
-        decreaseQuantity={decreaseQuantity}
-        cleanCart={cleanCart}
-        cartTotal={cartTotal}
-        isEmpty={isEmpty}
+        dispatch={dispatch}
+        // removeFromCart={removeFromCart}
+        // increaseQuantity={increaseQuantity}
+        // decreaseQuantity={decreaseQuantity}
+        // cleanCart={cleanCart}
+        // cartTotal={cartTotal}
+        // isEmpty={isEmpty}
       />
 
       <main className="container-xl mt-5">
@@ -27,7 +37,7 @@ const {cart, removeFromCart, increaseQuantity, decreaseQuantity, cleanCart, data
               <Guitar 
               key={d.id} 
               guitar={d} 
-              addToCart={addToCart}
+              dispatch={dispatch}
               />
             ))
           ) : (
