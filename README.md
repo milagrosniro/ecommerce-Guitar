@@ -16,6 +16,19 @@ Welcome to **GuitarStore**! This is a simple guitar e-commerce project built wit
 - **Product Catalog:** Explore a wide selection of guitars with details and prices.
 - **Shopping Cart:** Add, remove, and manage your products in the cart.
 
+## ⚙️ Evolution of the Project
+
+Initially, **GuitarStore** was built using custom React hooks to manage various pieces of state, such as the shopping cart and product data. This approach allowed us to implement a lightweight and modular structure for managing state within components.
+
+However, as the complexity of the application grew, managing state with hooks became more challenging and less scalable. To address this, the project was migrated to using **reducers** with the `useReducer` hook. This migration offered several benefits:
+
+- **Simplified State Management:** By centralizing state logic in reducers, we made the code easier to maintain and scale.
+- **Predictability:** Reducers ensure that state transitions follow a clear and predictable pattern.
+- **Extensibility:** Adding new features, like cart quantity management or removing items, became more straightforward and required fewer changes to the component structure.
+
+This change significantly improved the performance and maintainability of the app, especially when dealing with complex interactions like adding/removing items from the cart and managing user actions across multiple components.
+
+
 
 ## 🧑‍💻 Installation & Setup
 
