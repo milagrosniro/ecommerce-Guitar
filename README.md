@@ -21,6 +21,32 @@ Welcome to **GuitarStore**! This is a simple guitar e-commerce project built wit
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/milagrosniro/ecommerce-guitar.git
-   cd ecommerce-guitar
+   git clone https://github.com/milagrosniro/ecommerce-Guitar
+   cd ecommerce-Guitar 
 
+## 🧑‍💻 Installation & Setup
+
+**Install Dependencies:**
+
+```bash
+npm install
+```
+
+**Start the Project:**
+
+```bash
+npm run dev
+
+The project will be available at https://peaceful-cupcake-5d2ac1.netlify.app/
+```
+
+## 📋 Available Scripts
+```bash
+npm run dev: Starts the development server.
+npm run build: Builds the project for production.
+npm run lint: Runs ESLint to analyze the code.
+npm run test: Runs unit tests (if any).
+ ```
+
+## 📝 License
+This project is licensed under the MIT License.
