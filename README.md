@@ -28,6 +28,9 @@ However, as the complexity of the application grew, managing state with hooks be
 
 This change significantly improved the performance and maintainability of the app, especially when dealing with complex interactions like adding/removing items from the cart and managing user actions across multiple components.
 
+## 🚀 Live Demo
+
+Check out the live version [here](https://peaceful-cupcake-5d2ac1.netlify.app/).
 
 
 ## 🧑‍💻 Installation & Setup
@@ -49,8 +52,6 @@ npm install
 
 ```bash
 npm run dev
-
-The project will be available at https://peaceful-cupcake-5d2ac1.netlify.app/
 ```
 
 ## 📋 Available Scripts
